@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8">
+<head>
+	<meta charset="utf-8">
+	<title> Cursos de desarrollo Web </title>
+	<meta content="" name="description">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<meta content="width=device-width" name="viewport">
+	<meta content="IE=edge" http-equiv="X-UA-Compatible">
+	<link href="img/LOGO.jpg" rel="icon" type="image/jpg">
+    <link href="img/Conalco.png" rel="icon" type="image/jpg">
+	<link href="css/bootstrap-dark.css" rel="stylesheet">
+	<link id="pagestyle" href="css/theme-dark.css" rel="stylesheet">
+</head>
+
+<body data-offset="50" data-spy="scroll" data-target=".navbar" class="dark-theme">
+	<nav class="navbar navbar-fixed-top shadow" id="js-nav">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-target="#myNavbar" data-toggle="collapse" type="button">
+					<span class="icon-bar"></span> 
+					<span class="icon-bar"></span> 
+					<span class="icon-bar"></span>
+				</button>
+				
+				<a class="navbar-brand" href="#"> <img src="img/conalco.png" alt="logo"> </a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li><a href="#home">INICIO</a></li>
+					<li><a href="#products">CLASES</a></li>
+					<li><a href="#about">INFORMACIÓN</a></li>
+					<li><a href="#special">VID. ESPECIALES</a></li>
+					<li><a href="#testimonials">CONCEPTOS</a></li>
+					<!--<li><a href="#news">CONCEPTOS DE HTML</a></li>-->
+					<!--<li><a href="#history">historia</a></li>-->
+					<li><a href="#contact">contactos</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<section class="home section image-slider" id="home">
+		<div class="home-slider text-center">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide" style="background: url(img/slider/slide2.jpg);">
+					<img src="img/LOGO.jpg" alt="store logo">
+					<h2 class="home-slider-title-main white-color">CURSOS DE DESARROLLO WEB</h2>
+					<div class="home-buttons text-center"> <a href="#products" class="btn btn-lg  btn-primary">NUESTROS VIDEOS</a> </div>
+					<a class="arrow bounce text-center" href="#products"> <span class="ti-mouse"></span> <span class="ti-angle-double-down"></span> </a>
+				</div>
+
+				<div class="swiper-slide" style="background: url(img/slider/slide1.jpg);">
+					<img src="img/1.jpg" alt="store logo">
+					<h2 class="home-slider-title-main white-color">CURSOS DE DESARROLLO WEB</h2>
+					<div class="home-buttons text-center"> <a href="#products" class="btn btn-lg  btn-primary">CURSOS</a> </div>
+					<a class="arrow bounce text-center" href="#about"> <span class="ti-mouse"></span> <span class="ti-angle-double-down"></span> </a>
+				</div>
+
+			</div>
+			<div class="home-pagination"></div>
+			<div class="home-slider-next right-arrow-negative"> <span class="ti-arrow-right"></span> </div>
+			<div class="home-slider-prev left-arrow-negative"> <span class="ti-arrow-left"></span> </div>
+		</div>
+	</section>
+
+	<!-- INTERAVTIVE CART ITEM COUNTER -->
+	<span id="items-counter" class="h3 cart-items-counter" style="display: none">0</span>
+	<!-- / INTERAVTIVE CART ITEM COUNTER -->
+
+	<!-- CART WIDGET -->
+	<div class="cart-widget-container">
+		<div class="cart-widget text-center">
+			<a class="close" id="cart-widget-close">
+				<span class="ti-close"></span>
+			</a>
+
+			<img class="cart-logo" src="img/1.jpg" width="200" alt="store logo">
+			<h3 class="section-heading">.</h3>
+			<!-- EMPTY CART MESSAGE -->
+			<div id="cart-empty" class="cart-empty">
+				<h4>. <span class="ti-face-sad icon"></span></h4>
+			</div>
+			<!-- / EMPTY CART MESSAGE -->
+
+			<!-- CONTAINER FOR JS INJECT CART ITEMS, DON'T CHANGE ID AND CLASS -->
+			<div class="items-container" id="items"></div>
+			<!-- / CONTAINER FOR JS INJECT CART ITEMS, DON'T CHANGE ID AND CLASS -->
+
+			<!-- CART DELIVERY OPTIONS -->
+			<div class="cart-delivery" id="cart-delivery">
+				<h4 class="section-heading">.</h4>
+				<div class="custom-radio">
+					<input id="radio1" type="radio" name="delivery" value="10.00" checked> 
+					<label for="radio1">.</label>
+				</div>
+
+				<div class="custom-radio">
+					<input id="radio2" type="radio" name="delivery" value="15.00"> 
+					<label for="radio2">. </label>
+				</div>
+
+				<div class="custom-radio">
+					<input id="radio3" type="radio" name="delivery" value="20.00"> 
+					<label for="radio3">.</label>
+				</div>
+			</div>
+			<!-- / CART DELIVERY OPTIONS -->
+
+			<!-- CART SUMMARY CALCULATION -->
+			<div class="cart-summary" id="cart-summary">
+			<h4 class="section-heading">.</h4>
+				<div class="cart-summary-row" id="cart-total">. <span class="cart-value">.<span id="cost_value">.</span></span></div>
+				<div class="cart-summary-row">.<span class="cart-value">.<span id="cost_delivery"></span></span></div>
+				<div class="cart-summary-row cart-summary-row-total">. <span class="cart-value">.<span id="total-total"></span></span></div>
+			</div>
+			<!-- / CART SUMMARY CALCULATION -->
+
+			<!-- HIDDEN PAYPAL FORM -->
+			<form action="https://www.paypal.com/cgi-bin/webscr" method="post" class="cart-form" id="cart-form">
+				<!-- Identify your business so that you can collect the payments. -->
+				<input type="hidden" name="business" value="yourpaypal@email.com">
+				<!-- Specify a Buy Now button. -->
+				<input type="hidden" name="cmd" value="_xclick">
+				<!-- Specify details about the item that buyers will purchase. -->
+				<input type="hidden" name="item_name" value="Choco - checkout">
+				<input type="hidden" name="amount" id="amount" value="">
+				<input type="hidden" name="currency_code" value="USD">
+				<!-- Display the payment button. -->
+				<button type="submit" name="submit" class="btn btn-default btn-lg">
+				. <span class="ti-arrow-right"></span>
+				</button>
+			</form>
+			<!-- / HIDDEN PAYPAL FORM -->
+		</div>
+		<div class="cart-widget-close-overlay"></div>
+	</div>
+	<!-- / CART WIDGET -->
+
+	<section class="section-min section product" id="products">
+		<div class="container overflow-hidden">
+			<div class="row">
+				<div class="col-md-12">
+					<h3 class="section-heading">VIDEOS PRACTICOS DE LAS CLASES</h3>
+				</div>
+				<div class="col-md-12">
+					<div class="product-list-slider">
+						<ul class="swiper-wrapper product-list product-list-vertical">
+							<!-- SINGLE ITEM CLASE 1-->
+							<li class="swiper-slide wow fadeInUp text-center" data-wow-delay=".2s"> 
+								<span class="product-list-left pull-left">
+									<a href="#" data-target="#product-01" data-toggle="modal">
+										
+										<iframe width="560" height="315" src="https://www.youtube.com/embed/mSP_CPEBmh4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+										
+									</a>
+								</span> 
+
+								<a href="#" data-target="#product-01" data-toggle="modal">
+									<span class="product-list-right pull-left">
+										<span class="product-list-name h3">01 ENCABEZADO Y PÁRRAFOS</span>
+										<span class="product-list-price">LECCIÓN #1</span>
+									</span>
+								</a> 
+
+									
+							</li>
+							<!-- / SINGLE ITEM -->
+							
+							<!-- SINGLE ITEM -->
+							<li class="swiper-slide wow fadeInUp text-center" data-wow-delay=".4s"> 
+								<span class="product-list-left pull-left">
+									<iframe width="560" height="315" src="https://www.youtube.com/embed/-wee4wKruww" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+									</a>
+								</span> 
+
+								<a href="#" data-target="#product-01" data-toggle="modal">
+									<span class="product-list-right pull-left">
+										<span class="product-list-name h3">ESTRUCTURA</span>
+										<span class="product-list-price">LECCIÓN #2</span>
+									</span>
+								</a>
+
+									
+							</li>
+							<!-- / SINGLE ITEM -->
+
+							<!-- SINGLE ITEM -->
+							<li class="swiper-slide wow fadeInUp text-center" data-wow-delay=".6s"> 
+								<span class="product-list-left pull-left">
+									<iframe width="560" height="315" src="https://www.youtube.com/embed/13xEWT1nHu0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+									</a>
+								</span> 
+
+								<a href="#" data-target="#product-01" data-toggle="modal">
+									<span class="product-list-right pull-left">
+										<span class="product-list-name h3">ESTANDARES DE ARIA</span>
+										<span class="product-list-price">LECCIÓN #3</span>
+									</span>
+								</a> 
+
+								 		
+							</li>
+							<!-- / SINGLE ITEM -->
+							
+							<!-- SINGLE ITEM -->
+							<li class="swiper-slide wow fadeInUp text-center" data-wow-delay=".8s"> 
+								<span class="product-list-left pull-left">
+									<a href="#" data-target="#product-01" data-toggle="modal">
+										<iframe width="560" height="315" src="https://www.youtube.com/embed/P_7nm5v-IRY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+									</a>
+								</span> 
+
+								<a href="#" data-target="#product-01" data-toggle="modal">
+									<span class="product-list-right pull-left">
+										<span class="product-list-name h3">ENLACES INTERNOS Y EXTERNOS</span>
+										<span class="product-list-price">LECCIÓN #4</span>
+									</span>
+								</a>
+
+								
+							</li>
+							<!-- / SINGLE ITEM -->
+
+							<!-- SINGLE ITEM -->
+							<li class="swiper-slide text-center"> 
+								<span class="product-list-left pull-left">
+									<a href="#" data-target="#product-01" data-toggle="modal">
+										<iframe width="560" height="315" src="https://www.youtube.com/embed/moiJjVJ7nmc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+									</a>
+								</span> 
+
+								<a href="#" data-target="#product-01" data-toggle="modal">
+									<span class="product-list-right pull-left">
+										<span class="product-list-name h3">DESCARGAS</span>
+										<span class="product-list-price">LECCIÓN #5</span>
+									</span>
+								</a> 
+ 		
+							</li>
+							<!-- / SINGLE ITEM -->
+							
+							<!-- SINGLE ITEM -->
+							<li class="swiper-slide text-center"> 
+								<span class="product-list-left pull-left">
+									<a href="#" data-target="#product-01" data-toggle="modal">
+										<iframe width="560" height="315" src="https://www.youtube.com/embed/vjG-scoPBLw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+									</a>
+								</span> 
+
+								<a href="#" data-target="#product-01" data-toggle="modal">
+									<span class="product-list-right pull-left">
+										<span class="product-list-name h3">CREACIÓN DE LISTA NO ORDENADA</span>
+										<span class="product-list-price">LECCIÓN #6</span>
+									</span>
+								</a>
+	
+							</li>
+							<!-- / SINGLE ITEM -->
+							<!-- SINGLE ITEM -->
+							<li class="swiper-slide text-center"> 
+								<span class="product-list-left pull-left">
+									<a href="#" data-target="#product-01" data-toggle="modal">
+										<iframe width="560" height="315" src="https://www.youtube.com/embed/2qrC0z9RGj0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+									</a>
+								</span> 
+
+								<a href="#" data-target="#product-01" data-toggle="modal">
+									<span class="product-list-right pull-left">
+										<span class="product-list-name h3">CREACIÓN DE LISTAS ORDENADAS</span>
+										<span class="product-list-price">LECCIÓN #7</span>
+									</span>
+								</a>
+
+									
+							</li>
+							<!-- / SINGLE ITEM -->
+							<!-- SINGLE ITEM -->
+							<li class="swiper-slide text-center"> 
+								<span class="product-list-left pull-left">
+									<iframe width="560" height="315" src="https://www.youtube.com/embed/XsJQ3KwLesc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+									</a>
+								</span> 
+
+								<a href="#" data-target="#product-01" data-toggle="modal">
+									<span class="product-list-right pull-left">
+										<span class="product-list-name h3">CREACIÓN POR DEFINICIÓN</span>
+										<span class="product-list-price">LECCIÓN #8</span>
+									</span>
+								</a>
+
+								
+							</li>
+							<!-- / SINGLE ITEM -->
+												<!-- SINGLE ITEM -->
+												<li class="swiper-slide text-center"> 
+													<span class="product-list-left pull-left">
+														<iframe width="560" height="315" src="https://www.youtube.com/embed/stosHnJS94o" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+														</a>
+													</span> 
+					
+													<a href="#" data-target="#product-01" data-toggle="modal">
+														<span class="product-list-right pull-left">
+															<span class="product-list-name h3">CREACIÓN DE TABLAS</span>
+															<span class="product-list-price">LECCIÓN #9</span>
+														</span>
+													</a>
+					 	
+												</li>
+							
+											<!-- / SINGLE ITEM -->
+								<!-- SINGLE ITEM -->
+								<li class="swiper-slide text-center"> 
+									<span class="product-list-left pull-left">
+										<a href="#" data-target="#product-01" data-toggle="modal">
+											<iframe width="560" height="315" src="https://www.youtube.com/embed/QfudwbisUAE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+										</a>
+									</span> 
+	
+									<a href="#" data-target="#product-01" data-toggle="modal">
+										<span class="product-list-right pull-left">
+											<span class="product-list-name h3">INSERSION DE AUDIO Y VÍDEO DE FORMA BÁSICA E INTRODUCCIÓN A CSS</span>
+											<span class="product-list-price">LECCIÓN #10</span>
+										</span>
+									</a>
+		
+								</li>
+								<!-- / SINGLE ITEM -->
+								<!-- SINGLE ITEM -->
+								<li class="swiper-slide text-center"> 
+									<span class="product-list-left pull-left">
+										<iframe width="560" height="315" src="https://www.youtube.com/embed/qZi3jllM70Y" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+										</a>
+									</span> 
+	
+									<a href="#" data-target="#product-01" data-toggle="modal">
+										<span class="product-list-right pull-left">
+											<span class="product-list-name h3">INSERCIÓN DE AUDIO Y VÍDEO DE FORMA MÁS AVANZADA</span>
+											<span class="product-list-price">LECCIÓN #11</span>
+										</span>
+									</a>
+		
+								</li>
+								<!-- / SINGLE ITEM -->
+									<!-- SINGLE ITEM -->
+									<li class="swiper-slide text-center"> 
+										<span class="product-list-left pull-left">
+											<iframe width="560" height="315" src="https://www.youtube.com/embed/bL_P4bNetCs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+											</a>
+										</span> 
+		
+										<a href="#" data-target="#product-01" data-toggle="modal">
+											<span class="product-list-right pull-left">
+												<span class="product-list-name h3">CSS PARA CONTROLAR TEXTO EN PÁGINAS WEB</span>
+												<span class="product-list-price">LECCIÓN #12</span>
+											</span>
+										</a>
+			
+									</li>
+									<!-- / SINGLE ITEM -->
+									
+											<!-- SINGLE ITEM -->
+									<li class="swiper-slide text-center"> 
+										<span class="product-list-left pull-left">
+											<iframe width="560" height="315" src="https://www.youtube.com/embed/U0D4YESQ66g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+											</a>
+										</span> 
+		
+										<a href="#" data-target="#product-01" data-toggle="modal">
+											<span class="product-list-right pull-left">
+												<span class="product-list-name h3">CREACIÓN DE UNA PÁGINA WEB</span>
+												<span class="product-list-price">LECCIÓN #13</span>
+											</span>
+										</a>
+		
+											
+									</li>
+									<!-- / SINGLE ITEM -->
+									<!-- SINGLE ITEM -->
+									<li class="swiper-slide text-center"> 
+										<span class="product-list-left pull-left">
+											<iframe width="560" height="315" src="https://www.youtube.com/embed/EBmZeI0H-UM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+											</a>
+										</span> 
+		
+										<a href="#" data-target="#product-01" data-toggle="modal">
+											<span class="product-list-right pull-left">
+												<span class="product-list-name h3">CREACIÓN DE UN DISEÑO PARA ACOMODAR IMÁGENES</span>
+												<span class="product-list-price">LECCIÓN #14</span>
+											</span>
+										</a>
+		
+											
+									</li>
+									<!-- / SINGLE ITEM -->
+									<!-- SINGLE ITEM -->
+									<li class="swiper-slide text-center"> 
+										<span class="product-list-left pull-left">
+											<iframe width="560" height="315" src="https://www.youtube.com/embed/vAl4TisNM5c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+											</a>
+										</span> 
+		
+										<a href="#" data-target="#product-01" data-toggle="modal">
+											<span class="product-list-right pull-left">
+												<span class="product-list-name h3">PÁGINAS RESPONSIVAS</span>
+												<span class="product-list-price">LECCIÓN #15</span>
+											</span>
+										</a>
+		
+											
+									</li>
+									<!-- / SINGLE ITEM -->
+									<!-- / SINGLE ITEM -->					
+						</ul>
+
+						<!-- CAROUSEL CONTROLS -->
+						<div class="product-list-pagination text-center"></div>
+						<div class="product-list-slider-next right-arrow-negative">
+							<span class="ti-arrow-right"></span>
+						</div>
+
+						<div class="product-list-slider-prev left-arrow-negative">
+							<span class="ti-arrow-left"></span>
+						</div>
+						<!-- CAROUSEL CONTROLS -->
+					</div>
+				</div>
+			</div>
+			<!-- PRODUCT MODAL -->
+			<div class="modal fade product-modal" id="product-01" role="dialog" tabindex="-1">
+				<div class="modal-dialog">
+					
+					<!-- MODAL CONTENT -->
+					<div class="modal-content shadow">
+						<a class="close" data-dismiss="modal"> <span class="ti-close"></span></a>
+						<div class="modal-body">
+							<!-- Wrapper for slides -->
+							<div class="carousel slide product-slide" id="product-carousel">
+								<!-- CAROSUEL SLIDER -->
+								<div class="carousel-inner cont-slider">
+									<div class="item active"> <img alt="" src="img/product3.png" title=""> </div>
+									<div class="item"> <img alt="" src="img/product4.png" title=""> </div>
+									<div class="item"> <img alt="" src="img/product3.png" title=""> </div>
+									<div class="item"> <img alt="" src="img/product4.png" title=""> </div>
+								</div>
+								<!-- / CAROSUEL SLIDER -->
+
+								<!-- CAROUSEL INDICATORS -->
+								<ol class="carousel-indicators">
+									<li class="active" data-slide-to="0" data-target="#product-carousel"> 
+										<img alt="" src="img/product3.png"> 
+									</li>
+
+									<li class="" data-slide-to="1" data-target="#product-carousel"> 
+										<img alt="" src="img/product4.png"> 
+									</li>
+
+									<li class="" data-slide-to="2" data-target="#product-carousel"> 
+										<img alt="" src="img/product3.png"> 
+									</li>
+
+									<li class="" data-slide-to="3" data-target="#product-carousel"> 
+										<img alt="" src="img/product4.png"> 
+									</li>
+								</ol>
+								<!-- / CAROUSEL INDICATORS -->
+							</div>
+
+							<!-- PRODUCT DESCRIPTION -->
+							<div class="container">
+								<div class="row">
+									<div class="col-md-8 col-md-push-2">
+										<div class="row">
+											<div class="col-md-12 product-modal-header">
+												<h3 class="pull-left product-modal-title">Chocolate desire</h3>
+										
+												<span class="product-action-section">
+													<span class="price">$299.00</span>
+													<button type="button" class="btn btn-default add-item" data-image="img/product3.png" data-name="Chocolate desire" data-cost="299.00" data-id="8">
+													<span class="ti-shopping-cart"></span>add to cart </button>
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-md-8 col-md-push-2 product-description">
+										<h4 class="section-heading">Ut enim ad minim veniam</h4>
+										<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </p>
+
+										<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </p>
+
+										<div class="row">
+											<div class="col-md-6"> 
+												<img src="img/product3.png" class="img-responsive" alt="product image">
+											</div>
+											
+											<div class="col-md-6">
+												<h4 class="section-heading">Ut enim ad minim veniam</h4>
+												<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+											</div>
+										</div>
+
+										<div class="product-tabs">
+											<ul class="nav nav-tabs">
+												<li class="active"><a data-toggle="tab" href="#tab1">Details</a></li>
+												<li><a data-toggle="tab" href="#tab2">Info tab</a></li>
+												<li><a data-toggle="tab" href="#tab3">Other info </a></li>
+											</ul>
+
+											<div class="tab-content">
+												<div id="tab1" class="tab-pane fade in active">
+													<h4 class="section-heading">details</h4>
+
+													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+												</div>
+
+												<div id="tab2" class="tab-pane fade">
+													<h4 class="section-heading">Info tab</h4>
+
+													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+												</div>
+
+												<div id="tab3" class="tab-pane fade">
+													<h4 class="section-heading">other info</h4>
+
+													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- / PRODUCT DESCRIPTION -->
+						</div>
+					</div>
+					<!-- / MODAL CONTENT -->
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="container-fluid about white-color no-padding" id="about">
+    <div class="about-background about-background-1 row no-margin">
+        <div class="col-md-6 about-black-box">
+        	<h3 class="section-heading">¿importancia de la programación Web ?</h3>
+        	<p>La progrmación Web, es muy importante en el mundo del Internet, y cada día se va innovando en este ambito, generando necesidades de de parte de los usuarios, hoy en día para cuealquier institucion, ya sea comercial, academica, entre otras requiere tener su sitio web, y ahi es donde entra el profesioal en Sistemas Informaticos, a responder a esa necesidad que se genera mas aun en estos tiempos de pandemia</p>
+        	<a href="#" class="btn btn-default">VOLVER AL INICIO</a>
+        </div>
+        <div class="col-md-6"></div>
+    </div>
+
+    <div class="about-background about-background-2 row no-margin">
+        <div class="col-md-4 about-white-box col-md-offset-4">
+	        <h2 class="section-claim wow fadeInDown" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInDown;">
+	        estructura del curso
+	        	<span>importante</span>
+	        </h2>
+        	
+        	<p>El curso esta diseñado para que el educando se prepare y aprenda de manera autonoma con la ayuda de los videos, el material textual y pudiendo consultar de manera directa con el docente, para despejar dudas a su vez el estudiante tiene acceso al Classroom</p>
+
+        	<a href="#" class="btn btn-default">VOLVER AL INICIO</a>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+
+    <div class="about-background about-background-3 row no-margin">
+        <div class="col-md-6 about-black-box col-md-offset-6">
+        	<h3 class="section-heading">RECOMENDACIONES</h3>
+        	<p>Se recomienda al educando que vaya practicando con mayor dedicación en cuanto al manejo y edtudio de html y css. rvisando al margen de los videos los textos que se encuentran en classroom.</p>
+
+        	<a href="#" class="btn btn-default">VOLVER AL INICIO</a>
+        </div>
+    </div>
+  </section>
+
+	<section class="countdown" id="special">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h3 class="section-heading">VIDEOS ESPECIALES</h3>
+				</div>
+
+				<div class="col-md-5">
+					<ul class="product-list product-list-vertical">
+						<li class="wow fadeInUp" data-wow-delay=".2s">
+							<span class="product-list-left pull-left">
+									<a href="#" data-target="#product-01" data-toggle="modal">
+										<iframe width="560" height="315" src="https://www.youtube.com/embed/JfseLValHt8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+									</a>
+							</span>
+						</li>
+					</ul>
+				</div>
+
+				<div class="col-md-7 text-center">
+					<div class="countdown-container">
+						<h3 class="wow fadeInDown">Instalacion de convertidor de video</h3>
+						
+						<p class="wow fadeInDown">Herramienta que nos permite que podamos covertir los videos en fornatos aptos para los navegadores, de forma rápida y sensilla. </p>
+
+						<!-- DATA COUNDOWN INJECTED BY JS -->
+						
+						<!-- / DATA COUNDOWN INJECTED BY JS -->
+
+						<span class="countdown-price h3 wow fadeInUp">EL INSTALADOR LO ENCONTRARAS EN CLASSROOM</span>
+						<button type="button" class="btn btn-default add-item wow swing" data-image="img/product3.png" data-name="Chocolate desire [promo]" data-cost="420.00" data-id="9">
+							<a href="#" class="btn btn-default">VOLVER AL INICIO</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="testimonials" id="testimonials">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h3 class="section-heading">CONCEPTOS</h3>
+				</div>
+
+				<div class="col-md-12 testimonials-slider text-center">
+					<!-- CAROUSEL WRAPPER -->
+					<div class="swiper-wrapper">
+
+						<!-- SINGLE TESTIMONIALS ITEM -->
+						<div class="swiper-slide">
+							<div class="testimonials-container shadow"> <img alt="user avatar" class="wow fadeInUp" src="img/html5.png">
+								<h3 class="wow fadeInUp" data-wow-delay=".4s"> HTML <span>CONCEPTOS DE HTML</span> </h3>
+								<p class="wow fadeInUp" data-wow-delay=".6s"> HTML	(Hypertext	Markup	Language)	es	un	lenguaje	de	marcado	(que	no	es	lo	mismo	que un	lenguaje	de	programación)	que	sirve	para	definir	la	estructura	y	la	semántica	de	nuestra página	web	(luego	veremos	que	significa	esto).
+									HTML	fue	creado	y	es	mantenido	por	una	organización	sin	ánimo	de	lucro	llamada	W3C.	El W3C	es	un	consorcio	formado	por	más	de	400	empresas	(entre	ellas	las	que	desarrollan	los principales	navegadores	como	Google,	Microsoft,	Mozilla,	Apple...),	etc.
+									Desde	el	consorcio	trabajan	continuamente	en	definir	cómo	debe	evolucionar	este	lenguaje y	otros	estándares	que	conforman	la	web.	Posteriormente	los	fabricantes	de	navegadores preparan	los	mismos	intentando	conseguir	que	un	código	funcione	igual	en	todos	los navegadores.	Aunque	desafortunadamente	no	siempre	es	así,	cada	vez	es	una	realidad más	cercana. Por	tanto,	a	lo	largo	de	los	años	las	versiones	de	HTML	han	evolucionado:	HTML	2.0 (1995),	HTML	4.0	(1997),	XHTML	(2000),	HTML5	(2014),	etc.	con	el	objetivo	de	adaptarse	a los	nuevos	tiempos	y	así	dar	soporte	a	nuevas	necesidades	(estandarización	de	los sistemas	de	audio,	vídeo,	etc).
+									 </p>
+							</div>
+						</div>
+						<!-- / SINGLE TESTIMONIALS ITEM-->
+
+						<!-- SINGLE TESTIMONIALS ITEM -->
+						<div class="swiper-slide">
+							<div class="testimonials-container shadow"> <img alt="user avatar" class="wow fadeInUp" src="img/css3.png">
+								<h3 class="wow fadeInUp" data-wow-delay=".4s"> CSS <span>CONCEPTO DE CSS</span> </h3>
+								<p class="wow fadeInUp" data-wow-delay=".6s"> El	nombre	hojas	de	estilo	en	cascada	viene	del	inglés	Cascading	Style	Sheets,	del	que toma	sus	siglas.	CSS	es	un	lenguaje	usado	para	definir	la	presentación	o	la	apariencia	de un	documento	estructurado	escrito	en	HTML	o	XML	(y	por	extensión	en	XHTML).	CSS	se creó	para	separar	el	contenido	de	la	forma,	a	la	vez	que	permite	a	los	diseñadores mantener	un	control	mucho	más	preciso	sobre	la	apariencia	de	las	páginas.	El	W3C	(World Wide	Web	Consortium)	es	el	encargado	de	formular	la	especificación	de	las	hojas	de	estilo que	sirven	de	estándar	para	los	navegadores.
+									En	versiones	antiguas	de	HTML	se	debía	de	añadir	el	formato	dentro	de	las	propias etiquetas,	para	indicar	por	ejemplo	su	color	o	tamaño.	Esto	obligaba	a	tener	que	especificar el	mismo	formato	en	todas	las	etiquetas	para	tener	un	diseño	consistente,	además,	al cambiar	un	formato	también	había	que	cambiarlo	para	todas	las	etiquetas.
+									Cuando	se	utiliza	CSS,	las	etiquetas	HTML	no	deberían	proporcionar	información	sobre cómo	serán	visualizadas.	La	información	de	la	hoja	de	estilo	será	la	que	especifique	cómo se	han	de	mostrar:	color,	fuente,	alineación	del	texto,	tamaño,	etc.  </p>
+							</div>
+						</div>
+						<!-- / SINGLE TESTIMONIALS ITEM-->
+
+						<!-- SINGLE TESTIMONIALS ITEM -->
+						<div class="swiper-slide">
+							<div class="testimonials-container shadow"> <img alt="user avatar" class="wow fadeInUp" src="img/LOGO.jpg">
+								<h3 class="wow fadeInUp" data-wow-delay=".4s"> ESTRUCTURA BÁSICA DE UNA WEB <span>RECORDEMOS</span> </h3>
+								<p class="wow fadeInUp" data-wow-delay=".6s"> Un	documento	HTML	comienza	con	la	etiqueta		<html>		y	termina	con		</html>	.	Dentro	del documento	(entre	las	etiquetas	de	principio	y	fin	de	html)	hay	dos	zonas	bien	diferenciadas: el	encabezamiento,	delimitado	por		<head>		y		</head>	,	que	sirve	para	incluir	definiciones iniciales	válidas	para	todo	el	documento;	y	el	cuerpo,	delimitado	por		<body>		y		</body>	, donde	reside	la	información	del	documento.
+									Las	etiquetas	básicas	o	mínimas	son:
+									<!DOCTYPE	HTML	PUBLIC	"-//W3C//DTD	HTML	4.01//EN"	"http://www.w3.org/TR/html4/strict.d td"> <html> <head>			<title>Ejemplo</title> </head> <body>			¡Hola	mundo! </body> </html>
+									La	primera	línea	es	el	DOCTYPE,	o	el	tipo	de	documento	que	viene	a	continuación.	En	este caso	se	usa	el	estándar	de	HTML	4.01	(el	último	estándar	adoptado	en	1999,	ya	que HTML5	a	fecha	de	2011	sigue	siendo	un	borrador).	La	siguiente	etiqueta,		<html>	,	define	el inicio	del	documento	HTML,	e	indica	que	lo	que	viene	a	continuación	debe	ser	interpretado como	código	HTML.	Como	podemos	ver	en	la	última	línea,	se	cierra	la	etiqueta		</html>	 </p>
+							</div>
+						</div>
+						<!-- / SINGLE TESTIMONIALS ITEM-->
+					</div>
+					<!-- / CAROUSEL WRAPPER -->
+
+					<!-- CAROUSEL CONTROLS -->
+					<div class="testimonials-pagination"></div>
+					<div class="testimonials-slider-next right-arrow-negative">
+						<span class="ti-arrow-right"></span>
+					</div>
+					<div class="testimonials-slider-prev left-arrow-negative">
+						<span class="ti-arrow-left"></span>
+					</div>
+					<!-- / CAROUSEL CONTROLS -->
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- REVISAR 2020-->
+	<!--
+
+	<section class="post-list" id="news">
+		<div class="container overflow-hidden">
+			<div class="row">
+				<div class="col-md-12">
+					<h3 class="section-heading">HTML</h3>
+				</div>
+
+				<div class="post-slider col-md-12">
+					-->
+					<!-- NEWS CAROSUEL -->
+					<!---
+					<div class="swiper-wrapper">
+						-->
+						<!-- SINGLE NEWS ITEM -->
+						<!--
+						<div class="swiper-slide">
+							<div class="post-entry wow fadeInUp">
+								<a href="#" data-toggle="modal" data-target="#post-01">
+									<span class="post-entry-cover" style="background-image:url(img/blog-cover.jpg);">
+									</span>
+								</a>
+
+								<a class="h3" href="1" data-toggle="modal" data-target="#post-01">
+									EDITORES HTML
+								</a>
+								<a href="#" data-toggle="modal" data-target="#post-01" class="post-entry-more">
+									LEER TEXTO COMPLETO 
+									<span class="ti-arrow-right icon"></span>
+								</a>
+							</div>
+						</div>
+						-->
+						<!-- / SINGLE NEWS ITEM -->
+
+						<!-- SINGLE NEWS ITEM -->
+						<!--
+						<div class="swiper-slide">
+							<div class="post-entry wow fadeInUp">
+								<a href="#" data-toggle="modal" data-target="#post-01">
+									<span class="post-entry-cover" style="background-image:url(img/blog-cover.jpg);">
+									</span>
+								</a>
+
+								<a class="h3" href="#" data-toggle="modal" data-target="#post-01">
+									Elementos	de	la	cabecera
+
+								</a>
+								<a href="#" data-toggle="modal" data-target="#post-01" class="post-entry-more">
+									LEER TEXTO COMPLETO 
+									<span class="ti-arrow-right icon"></span>
+								</a>
+							</div>
+						</div>
+						-->
+						<!-- / SINGLE NEWS ITEM -->
+
+						<!-- SINGLE NEWS ITEM -->
+						<!---
+						<div class="swiper-slide">
+							<div class="post-entry wow fadeInUp">
+								<a href="#" data-toggle="modal" data-target="#post-01">
+									<span class="post-entry-cover" style="background-image:url(img/blog-cover.jpg);">
+									</span>
+								</a>
+
+								<a class="h3" href="#" data-toggle="modal" data-target="#post-01">
+									Etiquetas	básicas	HTML
+								</a>
+								<a href="#" data-toggle="modal" data-target="#post-01" class="post-entry-more">
+									LEER TEXTO COMPLETO 
+									<span class="ti-arrow-right icon"></span>
+								</a>
+							</div>
+						</div>
+						-->
+						<!-- / SINGLE NEWS ITEM -->
+
+						<!-- SINGLE NEWS ITEM -->
+						<!--
+						<div class="swiper-slide">
+							<div class="post-entry wow fadeInUp">
+								<a href="#" data-toggle="modal" data-target="#post-01">
+									<span class="post-entry-cover" style="background-image:url(img/blog-cover.jpg);">
+									</span>
+								</a>
+
+								<a class="h3" href="#" data-toggle="modal" data-target="#post-01">
+									Listas
+								</a>
+								<a href="#" data-toggle="modal" data-target="#post-01" class="post-entry-more">
+									LEER TEXTO COMPLETO 
+									<span class="ti-arrow-right icon"></span>
+								</a>
+							</div>
+						</div>
+					-->
+
+
+						<!-- / SINGLE NEWS ITEM -->
+
+						<!-- SINGLE NEWS ITEM -->
+						<!--<div class="swiper-slide">
+							<div class="post-entry wow fadeInUp">
+								<a href="#" data-toggle="modal" data-target="#post-01">
+									<span class="post-entry-cover" style="background-image:url(img/blog-cover.jpg);">
+									</span>
+								</a>
+
+								<a class="h3" href="#" data-toggle="modal" data-target="#post-01">
+									Cajas	(etiqueta		div	)
+								</a>
+								<a href="#" data-toggle="modal" data-target="#post-01" class="post-entry-more">
+									LEER TEXTO COMPLETO
+									<span class="ti-arrow-right icon"></span>
+								</a>
+							</div>
+						</div>
+						-->
+
+						<!-- / SINGLE NEWS ITEM -->
+
+						<!-- SINGLE NEWS ITEM -->
+
+						<!--
+						<div class="swiper-slide">
+							<div class="post-entry wow fadeInUp">
+								<a href="#" data-toggle="modal" data-target="#post-01">
+									<span class="post-entry-cover" style="background-image:url(img/blog-cover.jpg);">
+									</span>
+								</a>
+
+								<a class="h3" href="#" data-toggle="modal" data-target="#post-01">
+									Enlaces
+								</a>
+								<a href="#" data-toggle="modal" data-target="#post-01" class="post-entry-more">
+									LEER TEXTO COMPLETO
+									<span class="ti-arrow-right icon"></span>
+								</a>
+							</div>
+						</div>
+						-->
+
+						<!-- / SINGLE NEWS ITEM -->
+
+						<!--
+					</div>
+					-->
+
+					<!-- / NEWS CAROSUEL -->
+
+					<!-- CAROUSEL CONTROLS -->
+					<!--
+					<div class="post-pagination text-center"></div>
+					<div class="post-slider-next right-arrow-negative"> 
+						<span class="ti-arrow-right"></span>
+					</div>
+					
+					<div class="post-slider-prev left-arrow-negative"> 
+						<span class="ti-arrow-left"></span>
+					</div>
+					-->
+
+					<!-- / CAROUSEL CONTROLS -->
+					<!--
+				</div>
+			</div>
+					-->
+			<!-- NEWS MODAL -->
+
+			<!--
+			<div class="modal fade" id="post-01" role="dialog" tabindex="-1">
+				<a class="h3" href="#" data-toggle="modal" data-target="#post-01"></a>
+				<div class="modal-dialog">
+				-->
+					<!-- NEWS MODAL CONTENT -->
+					<!--
+					<div class="modal-content shadow">
+						<a class="close" data-dismiss="modal"> <span class="ti-close"></span></a>
+						
+						<div class="modal-body">
+							<div class="post-entry post-entry-modal">
+								<h3 class="section-heading">Duis aute irure dolor in reprehenderit in voluptate.</h3> 
+								
+								<span class="post-entry-meta">
+									<img alt="user avatar" class="post-entry-author pull-left" src="img/user.png">
+									<span class="post-entry-author-name pull-left">Alex Example</span> 
+									<span class="post-entry-time pull-right">6 min read
+										<span class="post-entry-category">interior, furnitures</span>
+									</span>
+								</span>
+
+								<span class="post-entry-cover" style="background-image:url(img/blog-cover.jpg);"></span>
+
+								<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </p>
+
+								<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </p>
+
+								<p> quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+
+								<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+							</div>
+						</div>
+					</div>
+
+				-->
+					<!-- / NEWS MODAL CONTENT -->
+
+					<!--
+				</div>
+			</div>
+		-->
+		
+			<!-- / NEWS MODAL --> 
+			<!--
+		</div>
+	</section>
+	-->
+<!--
+
+	<section class="timeline" id="history">
+		<a href="#2">ir</a>
+        <div class="container">
+            <div class="row">
+            	<div class="col-md-12">
+	                <h3 class="section-heading">Our history</h3>
+	                <div id="timeline" class="timeline-container">
+						-->
+						 <!-- TIMELINE ITEM -->
+						 <!--
+	                    <div class="timeline-block timeline-block-image-1">
+	                        <div class="timeline-point">
+	                        </div>
+
+	                        <div class="timeline-content wow fadeInLeft">
+	                            <span class="timeline-date">
+	                            <span class="timeline-month">May</span>
+	                            <span class="timeline-year">2016</span>
+	                            </span>
+	                            <h2>Envelope title</h2>
+	                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	                            </p>
+	                        </div>
+						</div>
+						-->
+	                    <!-- / TIMELINE ITEM -->
+
+						<!-- TIMELINE ITEM -->
+						<!--
+	                    <div class="timeline-block timeline-block-image-2">
+	                        <div class="timeline-point">
+	                        </div>
+	                        
+	                        <div class="timeline-content wow fadeInRight">
+	                            <span class="timeline-date">
+	                            <span class="timeline-month">March</span>
+	                            <span class="timeline-year">2016</span>
+	                            </span>
+	                            <h2>Lecce, Magnificat Lupiae</h2>
+	                            <p>Lorem ipsm dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	                            </p>
+	                        </div>
+						</div>
+					-->
+	                    <!-- / TIMELINE ITEM -->
+
+						<!-- TIMELINE ITEM -->
+						<!---
+	                    <div class="timeline-block timeline-block-image-3">
+	                        <div class="timeline-point">
+	                        </div>
+	                        
+	                        <div class="timeline-content wow fadeInLeft">
+	                            <span class="timeline-date">
+	                            <span class="timeline-month">July</span>
+	                            <span class="timeline-year">2015</span>
+	                            </span>
+	                            <h2>Lecce, Magnificat Lupiae</h2>
+	                            <p>Lorem ipsm dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	                            </p>
+	                        </div>
+						</div>
+					-->
+	                    <!-- / TIMELINE ITEM -->
+
+						<!-- TIMELINE ITEM -->
+						<!----
+	                    <div class="timeline-block timeline-block-image-4">
+	                        <div class="timeline-point">
+	                        </div>
+	                        
+	                        <div class="timeline-content wow fadeInRight">
+	                            <span class="timeline-date">
+	                            <span class="timeline-month">May</span>
+	                            <span class="timeline-year">2009</span>
+	                            </span>
+	                            <h2>Lecce, Magnificat Lupiae</h2>
+	                            <p>Lorem ipsm dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	                            </p>
+	                        </div>
+						</div>
+						-->
+	                    <!-- / TIMELINE ITEM -->
+
+						<!-- TIMELINE ITEM -->
+						<!----
+	                    <div class="timeline-block timeline-block-image-5">
+	                        <div class="timeline-point">
+	                        </div>
+	                        
+	                        <div class="timeline-content wow fadeInLeft">
+	                            <span class="timeline-date">
+	                            <span class="timeline-month">August</span>
+	                            <span class="timeline-year">2008</span>
+	                            </span>
+	                            <h2>Envelope title</h2>
+	                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	                            </p>
+	                        </div>
+						</div>
+					-->
+	                    <!-- / TIMELINE ITEM -->
+
+						<!-- TIMELINE ITEM -->
+						<!----
+	                    <div class="timeline-block timeline-block-image-6">
+	                        <div class="timeline-point">
+	                        </div>
+	                        
+	                        <div class="timeline-content wow fadeInRight">
+	                            <span class="timeline-date">
+	                            <span class="timeline-month">October</span>
+	                            <span class="timeline-year">2006</span>
+	                            </span>
+	                            <h2>Lecce, Magnificat Lupiae</h2>
+	                            <p>Lorem ipsm dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	                            </p>
+	                        </div>
+						</div>
+						-->
+	                    <!-- / TIMELINE ITEM -->
+
+						<!-- TIMELINE ITEM -->
+						<!----
+	                    <div class="timeline-block timeline-block-image-7">
+	                        <div class="timeline-point">
+	                        </div>
+	                        
+	                        <div class="timeline-content wow fadeInLeft">
+	                            <span class="timeline-date">
+	                            <span class="timeline-month">December</span>
+	                            <span class="timeline-year">2004</span>
+	                            </span>
+	                            <h2>Lecce, Magnificat Lupiae</h2>
+	                            <p>Lorem ipsm dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	                            </p>
+	                        </div>
+						</div>
+						-->
+	                    <!-- / TIMELINE ITEM -->
+
+						<!-- TIMELINE ITEM -->
+						<!----
+	                    <div class="timeline-block timeline-block-image-8">
+	                        <div class="timeline-point">
+	                        </div>
+	                        
+	                        <div class="timeline-content wow fadeInRight">
+	                            <span class="timeline-date">
+	                            <span class="timeline-month">May</span>
+	                            <span class="timeline-year">2000</span>
+	                            </span>
+	                            <h2>Lecce, Magnificat Lupiae</h2>
+	                            <p>Lorem ipsm dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	                            </p>
+	                        </div>
+	                    </div>
+					</div>
+				-->
+	                <!-- / TIMELINE ITEM -->
+	            </div>
+	        </div>
+        </div>
+    </section>
+
+	<section id="contact" class="contact contact-with-map">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h3 class="section-heading">contactos</h3>
+				</div>
+				<div class="col-md-3">
+					<div class="contact-data">
+						<ul class="white-color">
+							<li><span class="ti-mobile icon"></span>72317858</li>
+							<li><span class="ti-email icon"></span>osmarcc234@gmail.com</li>
+							
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-8 col-md-push-1">
+					<!-- CONTACT FORM -->
+					<div class="contact-form">
+						<form>
+							<div class="form-group">
+								<input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
+							</div>
+
+							<div class="form-group">
+								<input type="text" class="form-control" id="contact-email" name="contact-email" placeholder="Email" required>
+							</div>
+
+							<div class="form-group">
+								<input type="text" class="form-control" id="mobile" name="mobile" placeholder="Mobile Number" required>
+							</div>
+
+							<div class="form-group">
+								<input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
+							</div>
+
+							<div class="form-group">
+								<textarea class="form-control" id="message" placeholder="Message" maxlength="140" rows="7"></textarea>
+							</div>
+
+							<button type="button" type="button" id="submit" name="submit" class="btn btn-primary btn-lg text-center float-right">Enviar menzaje</button>
+						</form>
+					</div>
+					<!-- / CONTACT FORM -->
+				</div>
+			</div>
+		</div>
+		<!-- GOOGLE MAP CONTAINER -->
+		<div class="google-maps">
+			<div id="map-canvas"></div>
+		</div>
+		<!-- / GOOGLE MAP CONTAINER -->
+	</section>
+
+	<div class="section section-min">
+		<footer class="footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="row">
+							<div class="col-md-4 col-md-push-4 text-center"> <img class="footer-logo" src="img/4.jpg" alt="footer-logo">
+								<div class="social">
+									<ul>
+										<li><a href="http://facebook.com/" target="_blank"><span class="ti-facebook"></span></a></li>
+										<li><a href="https://twitter.com/" target="_blank"><span class="ti-twitter-alt"></span></a></li>
+										<li><a href="http://linkedin.com/" target="_blank"><span class="ti-linkedin"></span></a></li>
+										<li><a href="https://vimeo.com/" target="_blank"><span class="ti-vimeo-alt"></span></a></li>
+										<li><a href="http://youtube.com/" target="_blank"><span class="ti-youtube"></span></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-12">
+						<div class="row">
+							<div class="col-md-4 col-md-offset-4 col-sm-12">
+								<div class="footer-newsletter">
+									<div class="center text-center">
+										
+										<form action="#" method="post">
+											<div class="input-group">
+												<input class="form-control" type="text" placeholder="e-mail"> 
+												<span class="input-group-btn">
+													<button type="button" class="btn btn-default" type="button"><span class="ti-arrow-right"></span></button>
+												</span>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</footer>
+	</div>
+	 <script src="js/bundle.js"></script>
+<!-- 	<script src="js/vendor/wow.js"></script>
+	<script src="js/vendor/jquery-1.11.2.min.js"></script>
+	<script src="js/vendor/swiper.min.js"></script>
+	<script src="js/vendor/bootstrap.min.js"></script>
+	<script src="js/vendor/jquery.countTo.js"></script>
+	<script src="js/vendor/jquery.inview.js"></script>
+	<script src="js/vendor/jquery.countdown.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_6m6Glf1-P7jvVdHZ00e3Ue_EoUNe39g"></script>
+	<script src="js/tt-cart.js"></script>
+	<script src="js/main.js"></script> -->
+</body>
+
+<!-- Mirrored from endete.art/choco/v203/store-dark.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Aug 2019 19:32:05 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>
